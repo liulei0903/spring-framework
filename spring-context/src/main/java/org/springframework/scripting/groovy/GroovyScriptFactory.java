@@ -159,8 +159,7 @@ public class GroovyScriptFactory implements ScriptFactory, BeanFactoryAware, Bea
 	@Override
 	public void setBeanClassLoader(ClassLoader classLoader) {
 		if (classLoader instanceof GroovyClassLoader &&
-				(this.compilerConfiguration == null ||
-						((GroovyClassLoader) classLoader).hasCompatibleConfiguration(this.compilerConfiguration))) {
+				(this.compilerConfiguration == null )) {
 			this.groovyClassLoader = (GroovyClassLoader) classLoader;
 		}
 		else {

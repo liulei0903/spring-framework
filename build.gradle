@@ -2,7 +2,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE' apply false
 	id 'io.spring.ge.conventions' version '0.0.7'
 	id 'io.spring.nohttp' version '0.0.5.RELEASE'
-	id 'org.jetbrains.kotlin.jvm' version '1.3.72' apply false
+	id 'org.jetbrains.kotlin.jvm' version '1.3.41' apply false
 	id 'org.jetbrains.dokka' version '0.10.1' apply false
 	id 'org.asciidoctor.jvm.convert' version '2.4.0'
 	id 'org.asciidoctor.jvm.pdf' version '2.4.0'
@@ -31,7 +31,7 @@ configure(allprojects) { project ->
 			mavenBom "io.projectreactor:reactor-bom:Dysprosium-SR20"
 			mavenBom "io.rsocket:rsocket-bom:1.0.4"
 			mavenBom "org.eclipse.jetty:jetty-bom:9.4.31.v20200723"
-			mavenBom "org.jetbrains.kotlin:kotlin-bom:1.3.72"
+			mavenBom "org.jetbrains.kotlin:kotlin-bom:1.3.41"
 			mavenBom "org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.3.5"
 			mavenBom "org.junit:junit-bom:5.6.3"
 		}
@@ -50,7 +50,7 @@ configure(allprojects) { project ->
 				entry 'aspectjtools'
 				entry 'aspectjweaver'
 			}
-			dependencySet(group: 'org.codehaus.groovy', version: '2.5.13') {
+			dependencySet(group: 'org.codehaus.groovy', version: '2.5.4') {
 				entry 'groovy'
 				entry 'groovy-jsr223'
 				entry 'groovy-templates'
@@ -278,7 +278,9 @@ configure(allprojects) { project ->
 		}
 		repositories {
 			mavenCentral()
-			maven { url "https://repo.spring.io/libs-spring-framework-build" }
+			maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+			maven{ url 'http://repo.springsource.org/plugins-release' }
+			maven{ url 'https://repo.spring.io/plugins-release/'}
 		}
 	}
 	configurations.all {
